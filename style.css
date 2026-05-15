@@ -1,0 +1,368 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+/* ============================================================
+   1. RESET
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ============================================================
+   2. VIDEO BACKGROUND
+   ============================================================ */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -10;
+    filter: brightness(0.5) contrast(1.1) blur(2px);
+}
+
+/* Overlay */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 8, 8, 0.6);
+    z-index: -9;
+}
+
+/* ============================================================
+   3. HEADER (FIXED)
+   ============================================================ */
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Mobile Icon */
+#menu-icon {
+    display: none;
+}
+
+/* ============================================================
+   4. NAVBAR (SPA STYLE)
+   ============================================================ */
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #ededed;
+    font-size: 16px;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* Hover */
+.navbar a:hover {
+    color: #00abf0;
+}
+
+/* ACTIVE MENU (SPA) */
+.navbar a.active {
+    color: #00abf0;
+}
+
+/* Underline animasi */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #00abf0;
+    transition: 0.3s;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+#home {
+    padding-top: 50px; /* ✅ lebih dekat ke atas */
+}
+
+#Tentang {
+    padding-top: 6px; /* ✅ lebih dekat ke atas */
+}
+
+#Keahlian {
+    padding-top: 6px; /* ✅ lebih dekat ke atas */
+    
+}
+#portfolio {
+    padding-top: 6px; /* ✅ lebih dekat ke atas */
+    
+}
+
+
+#contact {
+    padding-top: 6px; /* ✅ lebih dekat ke atas */
+    
+}
+
+
+
+/* ============================================================
+   5. GLOBAL SECTION (SPA)
+   ============================================================ */
+section {
+    min-height: 100vh;
+    padding: 70px 6% 40px; /* ✅ lebih naik */
+}
+
+/* ============================================================
+   6. HOME SECTION
+   ============================================================ */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* TEXT */
+.home-content {
+    flex: 1;
+}
+
+.home-content h1 {
+    font-size: clamp(28px, 5vw, 56px);
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.text-animate h3 {
+    color: #00abf0;
+    font-size: clamp(18px, 3vw, 32px);
+}
+
+.home-content p {
+    margin: 20px 0;
+    opacity: 0.9;
+}
+
+/* BUTTON */
+.btn-box {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-box a {
+    padding: 12px 25px;
+    background: #00abf0;
+    color: #081b29;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 0 15px #00abf0;
+    transition: 0.3s;
+}
+
+.btn-box a:hover {
+    box-shadow: 0 0 25px #00abf0;
+}
+
+/* ============================================================
+   7. FOTO (FIX NO BOX SHADOW)
+   ============================================================ */
+.home-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FOTO PNG SHAPE */
+.main-photo {
+    width: 320px;
+    max-width: 100%;
+    height: auto;
+
+    display: block;
+    border: none;
+    outline: none;
+
+    object-fit: cover;
+    object-position: center top;
+
+    /* ✅ SHADOW IKUT SHAPE PNG */
+    filter: 
+        drop-shadow(0 0 15px rgba(0,171,240,0.6))
+        drop-shadow(0 0 30px rgba(0,171,240,0.3));
+
+    transition: 0.4s;
+}
+
+/* Hover */
+.home-img:hover .main-photo {
+    transform: scale(1.05);
+}
+
+/* ============================================================
+   8. SOCIAL
+   ============================================================ */
+.home-sci {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    gap: 15px;
+}
+
+.home-sci a {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00abf0;
+    transition: 0.3s;
+}
+
+.home-sci a:hover {
+    background: #00abf0;
+    color: #081b29;
+    box-shadow: 0 0 20px #00abf0;
+}
+
+/* ============================================================
+   9. BACKGROUND NUMBER
+   ============================================================ */
+.number-bg {
+    position: absolute;
+    right: 8%;
+    bottom: 10%;
+    font-size: clamp(60px, 10vw, 150px);
+    opacity: 0.05;
+}
+
+/* ============================================================
+   10. SECTION TAMBAHAN (ABOUT, DLL)
+   ============================================================ */
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* ✅ naik ke atas */
+    padding-top: 140px; /* atur jarak dari atas */
+}
+
+.section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #00abf0;
+}
+
+.section p {
+    max-width: 600px;
+    opacity: 0.9;
+}
+
+/* ============================================================
+   11. MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+
+    #menu-icon {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(8,27,41,0.95);
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .navbar.active {
+        left: 0;
+    }
+
+    .navbar a {
+        margin: 15px 0;
+    }
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn-box {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .home-sci {
+        position: relative;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .number-bg {
+        display: none;
+    }
+}
+
+/* ============================================================
+   12. TYPED TEXT
+   ============================================================ */
+.multiple-text {
+    color: #00abf0;
+}
+
+/* ========================= */
+/* IMAGE KEAHLIAN */
+/* ========================= */
+
+.skill-image {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 20px;
+
+    max-width: 500px;
+    margin: 20px 0 0; /* ✅ hilangkan center */
+
+    justify-items: start; /* ✅ rata kiri */
+}
+
+.skill-image img {
+    width: 80px;
+    height: auto;
+
+    filter: drop-shadow(0 0 10px rgba(0,171,240,0.5));
+    transition: 0.3s;
+}
+
+.skill-image img:hover {
+    transform: scale(1.1);
+}

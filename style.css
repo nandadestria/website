@@ -115,33 +115,15 @@ body::before {
 }
 
 /* ============================================================
-   5. SECTION
+   5. GLOBAL SECTION (SPA)
    ============================================================ */
 section {
     min-height: 100vh;
-    padding: 70px 6% 40px;
-}
-
-.section {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 140px;
-}
-
-.section h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
-    color: #00abf0;
-}
-
-.section p {
-    max-width: 600px;
-    opacity: 0.9;
+    padding: 70px 6% 40px; /* ✅ lebih naik */
 }
 
 /* ============================================================
-   6. HOME
+   6. HOME SECTION
    ============================================================ */
 .home {
     display: flex;
@@ -150,20 +132,24 @@ section {
     gap: 40px;
 }
 
+/* TEXT */
 .home-content {
     flex: 1;
 }
 
 .home-content h1 {
     font-size: clamp(28px, 5vw, 56px);
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .text-animate h3 {
     color: #00abf0;
+    font-size: clamp(18px, 3vw, 32px);
 }
 
 .home-content p {
     margin: 20px 0;
+    opacity: 0.9;
 }
 
 /* BUTTON */

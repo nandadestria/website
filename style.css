@@ -367,3 +367,67 @@ section {
 .skill-image img:hover {
     transform: scale(1.1);
 }
+
+
+/* ========================= */
+/* PORTFOLIO GALLERY */
+/* ========================= */
+
+.portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* ITEM */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* GAMBAR */
+.portfolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+/* OVERLAY */
+.portfolio-item .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 171, 240, 0.8);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: 0.4s;
+    text-align: center;
+}
+
+/* TEXT */
+.overlay h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.overlay p {
+    font-size: 14px;
+}
+
+/* HOVER EFFECT */
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}

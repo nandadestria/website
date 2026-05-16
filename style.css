@@ -95,6 +95,25 @@ body::before {
     width: 100%;
 }
 
+#home {
+    padding-top: 50px; /* ✅ lebih dekat ke atas */
+}
+
+#Tentang {
+    padding-top: 6px; /* ✅ lebih dekat ke atas */
+}
+
+#Keahlian {
+    padding-top: 6px; /* ✅ lebih dekat ke atas */ 
+}
+#portfolio {
+    padding-top: 6px; /* ✅ lebih dekat ke atas */
+}
+
+#contact {
+    padding-top: 6px; /* ✅ lebih dekat ke atas */  
+}
+
 /* ============================================================
    5. SECTION
    ============================================================ */

@@ -33,7 +33,6 @@ body {
     filter: brightness(0.5) contrast(1.1) blur(2px);
 }
 
-/* Overlay */
 body::before {
     content: '';
     position: fixed;
@@ -43,7 +42,7 @@ body::before {
 }
 
 /* ============================================================
-   3. HEADER (FIXED)
+   3. HEADER
    ============================================================ */
 .header {
     position: fixed;
@@ -55,13 +54,12 @@ body::before {
     z-index: 100;
 }
 
-/* Mobile Icon */
 #menu-icon {
     display: none;
 }
 
 /* ============================================================
-   4. NAVBAR (SPA STYLE)
+   4. NAVBAR
    ============================================================ */
 .navbar {
     display: flex;
@@ -76,17 +74,11 @@ body::before {
     transition: 0.3s;
 }
 
-/* Hover */
-.navbar a:hover {
-    color: #00abf0;
-}
-
-/* ACTIVE MENU (SPA) */
+.navbar a:hover,
 .navbar a.active {
     color: #00abf0;
 }
 
-/* Underline animasi */
 .navbar a::after {
     content: '';
     position: absolute;
@@ -103,41 +95,34 @@ body::before {
     width: 100%;
 }
 
-#home {
-    padding-top: 50px; /* ✅ lebih dekat ke atas */
-}
-
-#Tentang {
-    padding-top: 6px; /* ✅ lebih dekat ke atas */
-}
-
-#Keahlian {
-    padding-top: 6px; /* ✅ lebih dekat ke atas */
-    
-}
-#portfolio {
-    padding-top: 6px; /* ✅ lebih dekat ke atas */
-    
-}
-
-
-#contact {
-    padding-top: 6px; /* ✅ lebih dekat ke atas */
-    
-}
-
-
-
 /* ============================================================
-   5. GLOBAL SECTION (SPA)
+   5. SECTION
    ============================================================ */
 section {
     min-height: 100vh;
-    padding: 70px 6% 40px; /* ✅ lebih naik */
+    padding: 70px 6% 40px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 140px;
+}
+
+.section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #00abf0;
+}
+
+.section p {
+    max-width: 600px;
+    opacity: 0.9;
 }
 
 /* ============================================================
-   6. HOME SECTION
+   6. HOME
    ============================================================ */
 .home {
     display: flex;
@@ -146,24 +131,20 @@ section {
     gap: 40px;
 }
 
-/* TEXT */
 .home-content {
     flex: 1;
 }
 
 .home-content h1 {
     font-size: clamp(28px, 5vw, 56px);
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .text-animate h3 {
     color: #00abf0;
-    font-size: clamp(18px, 3vw, 32px);
 }
 
 .home-content p {
     margin: 20px 0;
-    opacity: 0.9;
 }
 
 /* BUTTON */
@@ -179,45 +160,22 @@ section {
     border-radius: 30px;
     text-decoration: none;
     box-shadow: 0 0 15px #00abf0;
-    transition: 0.3s;
-}
-
-.btn-box a:hover {
-    box-shadow: 0 0 25px #00abf0;
 }
 
 /* ============================================================
-   7. FOTO (FIX NO BOX SHADOW)
+   7. FOTO
    ============================================================ */
-.home-img {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* FOTO PNG SHAPE */
 .main-photo {
     width: 320px;
-    max-width: 100%;
-    height: auto;
-
-    display: block;
-    border: none;
-    outline: none;
-
     object-fit: cover;
-    object-position: center top;
 
-    /* ✅ SHADOW IKUT SHAPE PNG */
-    filter: 
+    filter:
         drop-shadow(0 0 15px rgba(0,171,240,0.6))
         drop-shadow(0 0 30px rgba(0,171,240,0.3));
 
     transition: 0.4s;
 }
 
-/* Hover */
 .home-img:hover .main-photo {
     transform: scale(1.05);
 }
@@ -241,7 +199,6 @@ section {
     align-items: center;
     justify-content: center;
     color: #00abf0;
-    transition: 0.3s;
 }
 
 .home-sci a:hover {
@@ -251,35 +208,83 @@ section {
 }
 
 /* ============================================================
-   9. BACKGROUND NUMBER
+   9. SKILL LOGO
    ============================================================ */
-.number-bg {
-    position: absolute;
-    right: 8%;
-    bottom: 10%;
-    font-size: clamp(60px, 10vw, 150px);
-    opacity: 0.05;
+.skill-image {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 20px;
+    max-width: 500px;
+    margin: 20px 0 0;
+    justify-items: start;
+}
+
+.skill-image img {
+    width: 80px;
+    filter: drop-shadow(0 0 10px rgba(0,171,240,0.5));
+    transition: 0.3s;
+}
+
+.skill-image img:hover {
+    transform: scale(1.1);
 }
 
 /* ============================================================
-   10. SECTION TAMBAHAN (ABOUT, DLL)
+   10. PORTFOLIO GALLERY 🔥
    ============================================================ */
-.section {
+.portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0,171,240,0.2);
+}
+
+/* IMAGE */
+.portfolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+/* OVERLAY */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,171,240,0.8);
+
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* ✅ naik ke atas */
-    padding-top: 140px; /* atur jarak dari atas */
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: 0.4s;
 }
 
-.section h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
-    color: #00abf0;
+.overlay h3 {
+    font-size: 20px;
 }
 
-.section p {
-    max-width: 600px;
-    opacity: 0.9;
+.overlay p {
+    font-size: 14px;
+}
+
+/* HOVER */
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
 }
 
 /* ============================================================
@@ -290,7 +295,6 @@ section {
     #menu-icon {
         display: block;
         font-size: 28px;
-        cursor: pointer;
     }
 
     .navbar {
@@ -300,16 +304,10 @@ section {
         width: 100%;
         flex-direction: column;
         background: rgba(8,27,41,0.95);
-        text-align: center;
-        transition: 0.3s;
     }
 
     .navbar.active {
         left: 0;
-    }
-
-    .navbar a {
-        margin: 15px 0;
     }
 
     .home {
@@ -317,19 +315,10 @@ section {
         text-align: center;
     }
 
-    .btn-box {
-        flex-direction: column;
-        width: 100%;
-    }
-
     .home-sci {
         position: relative;
         justify-content: center;
         margin-top: 20px;
-    }
-
-    .number-bg {
-        display: none;
     }
 }
 
@@ -338,31 +327,4 @@ section {
    ============================================================ */
 .multiple-text {
     color: #00abf0;
-}
-
-/* ========================= */
-/* IMAGE KEAHLIAN */
-/* ========================= */
-
-.skill-image {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 20px;
-
-    max-width: 500px;
-    margin: 20px 0 0; /* ✅ hilangkan center */
-
-    justify-items: start; /* ✅ rata kiri */
-}
-
-.skill-image img {
-    width: 80px;
-    height: auto;
-
-    filter: drop-shadow(0 0 10px rgba(0,171,240,0.5));
-    transition: 0.3s;
-}
-
-.skill-image img:hover {
-    transform: scale(1.1);
 }
